@@ -7,10 +7,10 @@ type Theme = "dark" | "light";
 
 function getThemeSnapshot(): Theme {
   if (typeof window === "undefined") {
-    return "dark";
+    return "light";
   }
 
-  return localStorage.getItem("theme") === "light" ? "light" : "dark";
+  return localStorage.getItem("theme") === "dark" ? "dark" : "light";
 }
 
 function subscribe(onStoreChange: () => void) {
@@ -35,7 +35,7 @@ function applyTheme(theme: Theme) {
 }
 
 export default function ThemeToggle() {
-  const theme = useSyncExternalStore(subscribe, getThemeSnapshot, () => "dark");
+  const theme = useSyncExternalStore(subscribe, getThemeSnapshot, () => "light");
   const isDark = theme === "dark";
 
   const toggleTheme = () => {

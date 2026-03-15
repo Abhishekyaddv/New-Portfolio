@@ -164,7 +164,7 @@ export default function About() {
           </div>
 
           {/* Quote + Experience row */}
-          <div className="grid grid-cols-[200px_1fr] gap-4">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-[200px_1fr]">
 
             {/* Quote card */}
             <div className="theme-panel flex flex-col justify-center p-5">
@@ -183,7 +183,7 @@ export default function About() {
                 </span>
               </div>
 
-              <div className="flex items-start justify-between">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                 <div className="flex items-start gap-3">
                   <span className="mt-1.5 w-2 h-2 rounded-full bg-blue-500 flex-shrink-0" />
                   <div>
@@ -199,7 +199,7 @@ export default function About() {
                   </div>
                 </div>
 
-                <div className="flex flex-col items-end gap-2">
+                <div className="flex flex-col items-start gap-2 sm:items-end">
                   <span className="theme-copy-muted text-md">Jan 2026 - Present</span>
                   {/* briefcase icon */}
                   {/* <svg viewBox="0 0 80 60" className="h-14 w-20 text-gray-100 dark:text-white/10" fill="currentColor z-10">

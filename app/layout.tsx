@@ -21,13 +21,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{
             __html: `(() => {
               const savedTheme = localStorage.getItem('theme');
-              const theme = savedTheme === 'light' ? 'light' : 'dark';
+              const theme = savedTheme === 'dark' ? 'dark' : 'light';
               document.documentElement.classList.toggle('dark', theme === 'dark');
             })();`,
           }}
