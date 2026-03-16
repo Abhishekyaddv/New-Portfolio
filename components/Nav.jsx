@@ -29,7 +29,7 @@ export const Nav = () => {
             href="#home"
             className="theme-panel-strong relative z-20 flex items-center gap-3 px-3 py-2 text-sm font-semibold text-neutral-900 dark:text-neutral-100"
           >
-            <span className="inline-flex h-2.5 w-2.5 rounded-full bg-sky-500" />
+            {/* <span className="inline-flex h-2.5 w-2.5 rounded-full bg-sky-500" /> */}
             Abhishek
           </a>
           <NavItems items={navItems} />
@@ -48,7 +48,7 @@ export const Nav = () => {
         <MobileNav>
           <MobileNavHeader className="theme-panel-strong px-3 py-2">
             <a href="#home" className="flex items-center gap-2 text-sm font-semibold text-neutral-900 dark:text-neutral-100">
-              <span className="inline-flex h-2.5 w-2.5 rounded-full bg-sky-500" />
+              {/* <span className="inline-flex h-2.5 w-2.5 rounded-full bg-sky-500" /> */}
               Abhishek
             </a>
             <div className="flex items-center gap-2">

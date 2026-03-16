@@ -194,7 +194,7 @@ export default function Projects() {
                     const parent = t.parentElement!;
                     parent.innerHTML = `
                       <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:12px">
-                        <div style="font-size:28px;font-weight:800;color:${activeProject.color};font-family:monospace;letter-spacing:-1px">{}</div>
+                        <div style="font-size:28px;font-weight:800;color:${activeProject.color};font-family:monospace;letter-spacing:-1px">${activeProject.previewLabel}</div>
                         <div style="font-size:11px;color:#888;text-align:center;line-height:1.4">${activeProject.title}</div>
                       </div>
                     `;
@@ -255,10 +255,10 @@ function ProjectCard({
       {/* Top row: dot + actions */}
       <div className="mb-4 flex items-center justify-between">
         {/* Color dot */}
-        <span
+        {/* <span
           className="h-2.5 w-2.5 rounded-full transition-transform duration-300 group-hover:scale-125"
           style={{ backgroundColor: project.color }}
-        />
+        /> */}
 
         {/* Action buttons */}
         <div className="flex items-center gap-2 text-neutral-500 dark:text-neutral-500">
