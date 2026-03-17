@@ -45,10 +45,11 @@ const socials = [
 ];
 
 const techBadges = [
-  { label: "TypeScript", color: "#3178c6", bg: "#dbeafe", icon: "TS" },
   { label: "React",      color: "#0ea5e9", bg: "#e0f2fe", icon: "⚛" },
-  { label: "Next.js",    color: "#111",    bg: "#f3f4f6", icon: "N" },
+  { label: "JavaScript", color: "#f7df1e", bg: "#636060", icon: "JS" },
   { label: "Node.js",    color: "#16a34a", bg: "#dcfce7", icon: "⬡" },
+  { label: "TypeScript", color: "#3178c6", bg: "#dbeafe", icon: "TS" },
+  { label: "Next.js",    color: "#111",    bg: "#f3f4f6", icon: "N" },
   { label: "PostgreSQL", color: "#4f46e5", bg: "#ede9fe", icon: "🐘" },
 ];
 
@@ -147,7 +148,7 @@ export default function About() {
               {techBadges.slice(2, 4).map((b) => (
                 <TechChip key={b.label} {...b} />
               ))}{" "}
-              and <TechChip {...techBadges[4]} /> — with a strong focus on clean UI.
+              <TechChip {...techBadges[4]} />  — and many more with a strong focus on clean UI.
             </p>
 
             <div className="mt-4">
