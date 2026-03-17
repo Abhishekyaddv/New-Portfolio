@@ -44,7 +44,7 @@ export default function MyJourneyPage() {
             Bachelors of Computer Application from CCSU Meerut.
           </p>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-lg font-normal mb-4">
-            CGPA: 8.5/10
+            CGPA: 7.62/10
           </p>
         </div>
       ),
