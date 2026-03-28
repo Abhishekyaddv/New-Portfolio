@@ -4,7 +4,7 @@ export default function MyJourneyPage() {
   // 1. Create the array of data
   const timelineData = [
     {
-      title: "Present",
+      title: "Jan 2026 - Present",
       content: (
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-lg font-normal mb-8">

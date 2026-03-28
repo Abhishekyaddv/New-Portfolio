@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import ThemeToggle from "@/components/ThemeToggle";
+import { CVModal } from "@/components/CVModal";
 import {
   MobileNav,
   MobileNavHeader,
@@ -20,6 +21,7 @@ const navItems = [
 
 export const Nav = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isCVModalOpen, setIsCVModalOpen] = useState(false);
 
   return (
     <div className="relative z-50 w-full px-4 pt-4 md:px-6">
@@ -34,13 +36,12 @@ export const Nav = () => {
           </a>
           <NavItems items={navItems} />
           <div className="relative z-20 flex items-center gap-3">
-            <a
-              href="/Abhishek%20CV.pdf"
-              download="Abhishek-Yadav-CV.pdf"
+            <button
+              onClick={() => setIsCVModalOpen(true)}
               className="theme-panel-strong cv-highlight px-3 py-2 text-xs font-semibold text-neutral-900 transition duration-300 hover:-translate-y-0.5 hover:bg-white dark:text-neutral-100 dark:hover:bg-neutral-900"
             >
-              Download CV
-            </a>
+              View CV
+            </button>
             <ThemeToggle />
           </div>
         </NavBody>
@@ -65,14 +66,15 @@ export const Nav = () => {
             onClose={() => setIsMobileMenuOpen(false)}
             className="theme-panel-solid"
           >
-            <a
-              href="/Abhishek%20CV.pdf"
-              download="Abhishek-Yadav-CV.pdf"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="theme-copy cv-highlight relative rounded-md border border-black/10 px-3 py-2 text-sm font-semibold dark:border-white/10"
+            <button
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                setIsCVModalOpen(true);
+              }}
+              className="theme-copy cv-highlight relative w-full text-left rounded-md border border-black/10 px-3 py-2 text-sm font-semibold dark:border-white/10"
             >
-              Download CV
-            </a>
+              View CV
+            </button>
             {navItems.map((item) => (
               <a
                 key={item.name}
@@ -86,6 +88,7 @@ export const Nav = () => {
           </MobileNavMenu>
         </MobileNav>
       </Navbar>
+      <CVModal isOpen={isCVModalOpen} onClose={() => setIsCVModalOpen(false)} />
     </div>
   );
 };
