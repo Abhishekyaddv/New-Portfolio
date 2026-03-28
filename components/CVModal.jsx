@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { X, Download } from "lucide-react";
+import { X, Download, FileText } from "lucide-react";
 
 export function CVModal({ isOpen, onClose }) {
   useEffect(() => {
@@ -50,17 +50,50 @@ export function CVModal({ isOpen, onClose }) {
         </div>
 
         <div className="flex-1 overflow-hidden bg-neutral-100 dark:bg-neutral-950 p-2 sm:p-4">
-          <object
-            data="/Abhishek%20CV.pdf#toolbar=0"
-            type="application/pdf"
-            className="h-full w-full rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white"
-            aria-label="CV Viewer"
-          >
-            <p className="p-4 text-center text-neutral-500">
-              Your browser does not support PDFs. 
-              <a href="/Abhishek%20CV.pdf" className="text-blue-500 hover:underline">Download the PDF</a> instead.
-            </p>
-          </object>
+          <div className="hidden sm:block h-full w-full">
+            <object
+              data="/Abhishek%20CV.pdf#toolbar=0"
+              type="application/pdf"
+              className="h-full w-full rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white"
+              aria-label="CV Viewer"
+            >
+              <p className="p-4 text-center text-neutral-500">
+                Your browser does not support PDFs. 
+                <a href="/Abhishek%20CV.pdf" className="text-blue-500 hover:underline">Download the PDF</a> instead.
+              </p>
+            </object>
+          </div>
+          
+          <div className="flex sm:hidden h-full flex-col items-center justify-center space-y-6 rounded-lg border border-neutral-200 bg-white p-6 text-center dark:border-neutral-800 dark:bg-neutral-900">
+            <div className="rounded-full bg-neutral-100 p-4 dark:bg-neutral-800">
+              <FileText size={48} className="text-neutral-400 dark:text-neutral-500" />
+            </div>
+            <div className="space-y-2">
+              <h3 className="text-lg font-medium text-neutral-900 dark:text-neutral-100">
+                PDF Viewer Not Supported
+              </h3>
+              <p className="text-sm text-neutral-500 dark:text-neutral-400">
+                Mobile browsers typically don't support inline PDF viewing. Please open the file directly or download it.
+              </p>
+            </div>
+            <div className="flex w-full flex-col gap-3">
+              <a
+                href="/Abhishek%20CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex w-full items-center justify-center gap-2 rounded-lg bg-black px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-neutral-800 dark:bg-white dark:text-black dark:hover:bg-neutral-200"
+              >
+                Open CV in new tab
+              </a>
+              <a
+                href="/Abhishek%20CV.pdf"
+                download="Abhishek-Yadav-CV.pdf"
+                className="flex w-full items-center justify-center gap-2 rounded-lg border border-neutral-200 px-4 py-3 text-sm font-medium text-neutral-900 transition-colors hover:bg-neutral-100 dark:border-neutral-800 dark:text-neutral-100 dark:hover:bg-neutral-800"
+              >
+                Download CV
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
