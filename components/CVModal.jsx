@@ -50,11 +50,17 @@ export function CVModal({ isOpen, onClose }) {
         </div>
 
         <div className="flex-1 overflow-hidden bg-neutral-100 dark:bg-neutral-950 p-2 sm:p-4">
-          <iframe
-            src="/Abhishek%20CV.pdf#toolbar=0"
+          <object
+            data="/Abhishek%20CV.pdf#toolbar=0"
+            type="application/pdf"
             className="h-full w-full rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white"
-            title="CV Viewer"
-          />
+            aria-label="CV Viewer"
+          >
+            <p className="p-4 text-center text-neutral-500">
+              Your browser does not support PDFs. 
+              <a href="/Abhishek%20CV.pdf" className="text-blue-500 hover:underline">Download the PDF</a> instead.
+            </p>
+          </object>
         </div>
       </div>
     </div>

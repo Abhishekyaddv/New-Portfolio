@@ -53,6 +53,12 @@ export const Nav = () => {
               Abhishek
             </a>
             <div className="flex items-center gap-2">
+              <button
+                onClick={() => setIsCVModalOpen(true)}
+                className="theme-panel-strong cv-highlight px-2 py-1.5 text-[11px] font-semibold text-neutral-900 transition duration-300 hover:-translate-y-0.5 hover:bg-white dark:text-neutral-100 dark:hover:bg-neutral-900 rounded-md border border-neutral-200 dark:border-neutral-800"
+              >
+                View CV
+              </button>
               <ThemeToggle />
               <MobileNavToggle
                 isOpen={isMobileMenuOpen}
@@ -66,15 +72,6 @@ export const Nav = () => {
             onClose={() => setIsMobileMenuOpen(false)}
             className="theme-panel-solid"
           >
-            <button
-              onClick={() => {
-                setIsMobileMenuOpen(false);
-                setIsCVModalOpen(true);
-              }}
-              className="theme-copy cv-highlight relative w-full text-left rounded-md border border-black/10 px-3 py-2 text-sm font-semibold dark:border-white/10"
-            >
-              View CV
-            </button>
             {navItems.map((item) => (
               <a
                 key={item.name}
