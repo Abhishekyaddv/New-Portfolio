@@ -7,7 +7,7 @@ const HeroName = () => {
       <div className="theme-heading text-4xl font-bold leading-tight md:text-6xl">
         <LayoutTextFlip 
           text="Hey i'm Abhishek, a "
-          words={["Full Stack Developer", "UI/UX Designer", "Tech Enthusiast"]}
+          words={["Full Stack Developer", "UI/UX Designer", "Software Engineer"]}
           duration={3000}
         />
        
