@@ -186,8 +186,7 @@ export default function About() {
                     <p className="theme-heading text-md font-semibold dark:text-white">SDE Intern</p>
                     <div className="flex items-center gap-2 mt-0.5">
                       <span className="text-blue-500 text-md font-medium">Social Cults</span>
-                      <span className="theme-copy-muted text-xs dark:text-neutral-600">🌐</span>
-                      <span className="theme-copy-muted text-xs dark:text-neutral-600">in</span>
+                      
                     </div>
                     {/* <span className="theme-copy mt-2 inline-block rounded-md bg-gray-100 px-2 py-0.5 text-xs dark:bg-white/10">
                       Current Tenure: 4 months
@@ -197,12 +196,7 @@ export default function About() {
 
                 <div className="flex flex-col items-start gap-2 sm:items-end">
                   <span className="theme-copy-muted text-md">Jan 2026 - Present</span>
-                  {/* briefcase icon */}
-                  {/* <svg viewBox="0 0 80 60" className="h-14 w-20 text-gray-100 dark:text-white/10" fill="currentColor z-10">
-                    <rect x="15" y="20" width="50" height="34" rx="4"/>
-                    <rect x="28" y="13" width="24" height="12" rx="3" fill="none" stroke="currentColor" strokeWidth="4"/>
-                    <rect x="35" y="34" width="10" height="6" rx="1" fill="white"/>
-                  </svg> */}
+                  
                 </div>
               </div>
             </div>
@@ -217,7 +211,7 @@ export default function About() {
           
           <div className="theme-panel overflow-hidden">
             {/* Map placeholder */}
-            <div className="relative flex h-[150px] items-center justify-center bg-gray-100 dark:bg-white/5">
+            <div className="relative flex h-37.5 items-center justify-center bg-gray-100 dark:bg-white/5">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#e5e7eb_1px,transparent_1px)] bg-[length:20px_20px] dark:bg-[radial-gradient(circle_at_50%_50%,rgba(148,163,184,0.25)_1px,transparent_1px)]" />
 
               {/* Pulse rings — three staggered rings expanding from center */}

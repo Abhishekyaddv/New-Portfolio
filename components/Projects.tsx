@@ -1,5 +1,7 @@
 "use client";
 
+import { col } from "motion/react-client";
+import Image from "next/image";
 import { useRef, useState, useSyncExternalStore } from "react";
 
 type Theme = "dark" | "light";
@@ -27,26 +29,39 @@ function subscribe(onStoreChange: () => void) {
 }
 
 const projects = [
-  {
+   {
     id: 1,
-    title: "Yap - Real time chat application",
+    title: "Contexto",
     description:
-      "A modern, full-stack real-time messaging application built with the MERN stack. Features instant messaging, live user status updates, and a sleek, glassmorphic UI powered by TailwindCSS and DaisyUI.",
-    tags: ["REACT", "NEXT.JS", "SOCKET.IO", "TAILWIND", "DAISYUI"],
-    color: "#ef4444",
-    liveUrl: "https://www.linkedin.com/in/abhishekyaaddv/recent-activity/all/",
-    githubUrl: "https://github.com/Abhishekyaddv/YaP---Realtime-Chat-Aplication",
-    preview: "/yap.png",
-    previewLabel: "Yap - Real time chat application",
-    previewBg: "#0f0f1a",
+      "An engaging language learning app featuring a personalized AI tutor. Built with a React frontend and Node.js backend, it leverages Claude and Gemini for advanced natural language processing and custom lesson recommendations.",
+    tags: ["REACT.JS", "NODE.JS", "MONGODB", "GEMINI-2.5"],
+    color: "#60a5fa",
+    liveUrl: "https://scenario-based-language-learning-ap.vercel.app/",
+    githubUrl: "https://github.com/Abhishekyaddv/Scenario-based-language-learning-App",
+    preview: "/Contexto.png",
+    previewLabel: "Contexto - Real time contextual learning app with AI tutor",
+    previewBg: "#1a0f1a",
   },
   {
     id: 2,
+    title: "Yap",
+    description:
+      "A modern, full-stack real-time messaging application built with the MERN stack. Features instant messaging, live user status updates, and a sleek, glassmorphic UI powered by TailwindCSS and DaisyUI.",
+    tags: ["REACT", "NEXT.JS", "SOCKET.IO", "TAILWIND", "DAISYUI"],
+    color: "#f97316",
+    liveUrl: "https://www.linkedin.com/in/abhishekyaaddv/recent-activity/all/",
+    githubUrl: "https://github.com/Abhishekyaddv/YaP---Realtime-Chat-Aplication",
+    preview: "/yap.png",
+    previewLabel: "Yap",
+    previewBg: "#0f0f1a",
+  },
+  {
+    id: 3,
     title: "React Job Portal",
     description:
       "A fully functional Job Portal application built with React.js. This application demonstrates full CRUD (Create, Read, Update, Delete) operations, allowing users to manage job listings effectively. It serves as a comprehensive portfolio project showcasing modern React practices.",
     tags: ["REACT", "NEXT.JS", "TAILWIND", "CRUD"],
-    color: "#22d3ee",
+    color: "#4ade80",
     liveUrl: "https://www.linkedin.com/in/abhishekyaaddv/recent-activity/all/",
     githubUrl: "https://github.com/Abhishekyaddv/Job-Portal-React",
     preview: "/react-portal.png",
@@ -54,12 +69,12 @@ const projects = [
     previewBg: "#0f1a0f",
   },
   {
-    id: 3,
+    id: 4,
     title: "React E-commerce Site",
     description:
       "React E-Commerce Platform 🛒 A full-stack e-commerce application built using React and Vite, featuring a complete shopping cart system, product management, and a secure checkout process. This project demonstrates modern frontend development practices coupled with a robust backend integration.",
     tags: ["REACT", "NEXT.JS", "TAILWIND", "NODE.JS", "EXPRESS.JS"],
-    color: "#818cf8",
+    color: "#f43f5e",
     liveUrl: "https://www.linkedin.com/in/abhishekyaaddv/recent-activity/all/",
     githubUrl: "https://github.com/Abhishekyaddv/React-Ecommerce-Site",
     preview: "/HomePage.png",
@@ -67,12 +82,12 @@ const projects = [
     previewBg: "#0f0f1a",
   },
   {
-    id: 4,
+    id: 5,
     title: "Github user finder",
     description:
-      "The GitHub User Finder is a sleek and intuitive web application designed to instantly fetch and display profile information for any GitHub user. Built with modern JavaScript (ES6+), HTML5, and CSS3, this project serves as a practical demonstration of working with external APIs and dynamically rendering data on the front end. It provides a clean, user-friendly interface for quickly accessing key developer metrics and information",
+      "The GitHub User Finder is a sleek and intuitive web application designed to instantly fetch and display profile information for any GitHub user.this project serves as a practical demonstration of working with external APIs and dynamically rendering data on the front end. It provides a clean, user-friendly interface for quickly accessing key developer metrics and information",
     tags: ["JAVASCRIPT", "HTML", "CSS", "API"],
-    color: "#f97316",
+    color: "#60a5fa",
     liveUrl: "https://abhishekyaddv.github.io/GitHub-User-Finder-A-Dynamic-API-Powered-Web-Application/github.html",
     githubUrl: "https://github.com/Abhishekyaddv/GitHub-User-Finder-A-Dynamic-API-Powered-Web-Application",
     preview: "/Github.png",
@@ -80,31 +95,19 @@ const projects = [
     previewBg: "#1a0f0f",
   },
   {
-    id: 5,
+    id: 6,
     title: "Vanilla Amazon",
     description:
       "Vanilla JS Amazon Clone 🛍️ A fully responsive, front-end clone of the Amazon e-commerce platform, built from the ground up using only vanilla HTML, CSS, and modern JavaScript (ES6+). This project demonstrates a solid understanding of core web technologies without relying on any external frameworks or libraries.",
     tags: ["JAVASCRIPT", "HTML", "CSS", "API"],
-    color: "#4ade80",
+    color: "#f97316",
     liveUrl: "https://abhishekyaddv.github.io/Vanilla-Amazon-Project/amazon.html",
     githubUrl: "https://github.com/Abhishekyaddv/Vanilla-Amazon-Project",
     preview: "/vanilla.png",
     previewLabel: "Vanilla Amazon",
     previewBg: "#0f1a12",
   },
-  {
-    id: 6,
-    title: "Language Learning App - Coming Soon!",
-    description:
-      "Language Learning App with AI Tutor 🤖 A language learning application that leverages AI to provide personalized tutoring and interactive lessons. Built with React for the frontend and Node.js for the backend, this project demonstrates the integration of AI technologies to create an engaging and effective language learning experience.",
-    tags: ["REACT.JS", "NODE.JS", "POSTGRESQL"],
-    color: "#e879f9",
-    liveUrl: "#",
-    githubUrl: "#",
-    preview: "/previews/drivedeck.png",
-    previewLabel: "Language Learning App - Coming Soon!",
-    previewBg: "#1a0f1a",
-  },
+ 
 ];
 
 // Arrow icon
@@ -183,9 +186,11 @@ export default function Projects() {
                 className="h-[130px] w-full flex items-center justify-center"
                 style={{ backgroundColor: activeProject.previewBg }}
               >
-                <img
+                <Image
                   src={activeProject.preview}
                   alt={activeProject.previewLabel}
+                  width={220}
+                  height={130}
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     // fallback — show a branded placeholder
@@ -245,23 +250,23 @@ function ProjectCard({
     <div
       onMouseEnter={onHover}
       onMouseLeave={onLeave}
-      className="group relative flex cursor-default flex-col justify-between rounded-2xl border p-5 transition-all duration-300 border-black/10 bg-white hover:border-black/20 hover:bg-slate-50 dark:border-white/5 dark:bg-[#1c1c1f] dark:hover:border-white/10 dark:hover:bg-[#222226]"
+      className="group relative flex h-65 cursor-default flex-col rounded-2xl border p-5 transition-all duration-300 border-black/10 bg-white hover:border-black/20 hover:bg-slate-50 dark:border-white/5 dark:bg-[#1c1c1f] dark:hover:border-white/10 dark:hover:bg-[#222226]"
       style={{
         boxShadow: isHovered
           ? `0 0 0 1px ${project.color}22, 0 8px 32px ${project.color}11`
           : "none",
       }}
     >
-      {/* Top row: dot + actions */}
-      <div className="mb-4 flex items-center justify-between">
-        {/* Color dot */}
-        {/* <span
-          className="h-2.5 w-2.5 rounded-full transition-transform duration-300 group-hover:scale-125"
-          style={{ backgroundColor: project.color }}
-        /> */}
+      {/* Title + action buttons */}
+      <div className="mb-3 flex items-start justify-between gap-3">
+        <h3
+          className="min-w-0 flex-1 truncate text-base font-semibold leading-tight transition-colors duration-200"
+          style={{ color: isHovered ? project.color : isDark ? "#f5f5f5" : "#0f172a" }}
+        >
+          {project.title}
+        </h3>
 
-        {/* Action buttons */}
-        <div className="flex items-center gap-2 text-neutral-500 dark:text-neutral-500">
+        <div className="shrink-0 flex items-center gap-1 text-neutral-500 dark:text-neutral-500">
           <a
             href={project.liveUrl}
             target="_blank"
@@ -283,16 +288,17 @@ function ProjectCard({
         </div>
       </div>
 
-      {/* Title */}
-      <h3
-        className="mb-2 text-base font-semibold transition-colors duration-200"
-        style={{ color: isHovered ? project.color : isDark ? "#f5f5f5" : "#0f172a" }}
-      >
-        {project.title}
-      </h3>
-
       {/* Description */}
-      <p className="mb-5 flex-1 text-sm leading-relaxed text-slate-600 dark:text-neutral-400">
+      <p
+        className="mb-5 flex-1 text-sm leading-relaxed text-slate-600 dark:text-neutral-400"
+        style={{
+          display: "-webkit-box",
+          WebkitBoxOrient: "vertical",
+          WebkitLineClamp: 3,
+          overflow: "hidden",
+          textOverflow: "ellipsis",
+        }}
+      >
         {project.description}
       </p>
 
