@@ -195,7 +195,7 @@ export default function About() {
                 </div>
 
                 <div className="flex flex-col items-start gap-2 sm:items-end">
-                  <span className="theme-copy-muted text-md">Jan 2026 - Present</span>
+                  <span className="theme-copy-muted text-md">Jan 2026 - Mar 2026</span>
                   
                 </div>
               </div>

@@ -24,7 +24,7 @@ export const Nav = () => {
   const [isCVModalOpen, setIsCVModalOpen] = useState(false);
 
   return (
-    <div className="relative z-50 w-full px-4 pt-4 md:px-6">
+    <div className="relative z-50 w-full px-4 pt-4 md:sticky md:top-0 md:px-6">
       <Navbar>
         <NavBody>
           <a
