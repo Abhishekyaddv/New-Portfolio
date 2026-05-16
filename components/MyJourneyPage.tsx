@@ -8,7 +8,7 @@ export default function MyJourneyPage() {
       content: (
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 text-sm md:text-base leading-relaxed font-normal mb-3">
-            Working as SDE intern at <span className="font-semibold text-blue-500">Social Cults</span>.
+            Worked as Full-Stack Intern at <span className="font-semibold text-blue-500">Social Cults</span>.
           </p>
           <p className="text-neutral-800 dark:text-neutral-200 text-sm md:text-base leading-relaxed font-normal mb-4">
             <span className="font-semibold text-green-500">SwissGain MERN Stack Project:</span> Developed responsive and scalable frontend interfaces using React.js, built and integrated backend services using Node.js and Express.js, designed and managed MongoDB data models and APIs, implemented end-to-end features and integrations, and collaborated on debugging and optimization.
@@ -26,7 +26,7 @@ export default function MyJourneyPage() {
             Masters of Computer Application (MCA) from AKTU University.
           </p>
           <p className="text-neutral-800 dark:text-neutral-200 text-sm md:text-base leading-relaxed font-normal mb-4">
-            CGPA: 7.9/10
+            SCGPA: 7.9/10
           </p>
         </div>
       ),
@@ -39,7 +39,7 @@ export default function MyJourneyPage() {
             Bachelors of Computer Application from CCSU Meerut.
           </p>
           <p className="text-neutral-800 dark:text-neutral-200 text-sm md:text-base leading-relaxed font-normal mb-4">
-            CGPA: 7.62/10
+            SCGPA: 7.62/10
           </p>
         </div>
       ),

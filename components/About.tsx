@@ -7,10 +7,59 @@ import LinkedinIcon from "./ui/linkedin-icon";
 import MailFilledIcon from "./ui/mail-filled-icon";
 import TwitterIcon from "./ui/twitter-icon";
 
+import { motion } from "motion/react";
+import {
+  IconBrandReact,
+  IconBrandJavascript,
+  IconBrandNextjs,
+  IconBrandTypescript,
+  IconBrandTailwind,
+  IconBrandBootstrap,
+  IconBrandPython,
+  IconBrandNodejs,
+  IconBrandMongodb,
+  IconBrandGit,
+  IconBrandGithub,
+  IconDatabase,
+  IconApiApp,
+  IconCoffee,
+  IconBrandLaravel,
+  IconBrandPhp
+} from "@tabler/icons-react";
+
 // ── tiny data ──────────────────────────────────────────────────────────────
-const skills = [ "Python", "Java", "React", "JavaScript", "Node.js",
-  "Next.js",  "TypeScript", 
-  "Tailwind CSS", "Bootstrap" , "Postman", "PostgreSQL", "MongoDB", "Git", "GitHub",
+const skillsData = [
+  {
+    category: "FRONTEND",
+    skills: [
+      { name: "Next.js", icon: <IconBrandNextjs size={16} /> },
+      { name: "React", icon: <IconBrandReact size={16} color="#61DAFB" /> },
+      { name: "TypeScript", icon: <IconBrandTypescript size={16} color="#3178C6" /> },
+      { name: "JavaScript", icon: <IconBrandJavascript size={16} color="#F7DF1E" /> },
+      { name: "Laravel", icon: <IconBrandLaravel size={16} color="#FF2D20" /> },
+      { name: "Tailwind CSS", icon: <IconBrandTailwind size={16} color="#06B6D4" /> },
+      { name: "Bootstrap", icon: <IconBrandBootstrap size={16} color="#7952B3" /> },
+    ]
+  },
+  {
+    category: "BACKEND",
+    skills: [
+      { name: "Node.js", icon: <IconBrandNodejs size={16} color="#68A063" /> },
+      { name: "Python", icon: <IconBrandPython size={16} color="#3776AB" /> },
+      { name: "Java", icon: <IconCoffee size={16} color="#E32D2D" /> },
+      { name: "PostgreSQL", icon: <IconDatabase size={16} color="#336791" /> },
+      { name: "PHP", icon: <IconBrandPhp size={16} color="#777BB4" /> },
+      { name: "MongoDB", icon: <IconBrandMongodb size={16} color="#47A248" /> },
+    ]
+  },
+  {
+    category: "TOOLS & OTHERS",
+    skills: [
+      { name: "Git", icon: <IconBrandGit size={16} color="#F05032" /> },
+      { name: "GitHub", icon: <IconBrandGithub size={16} /> },
+      { name: "Postman", icon: <IconApiApp size={16} color="#FF6C37" /> },
+    ]
+  }
 ];
 
 const socials = [
@@ -183,7 +232,7 @@ export default function About() {
                 <div className="flex items-start gap-3">
                   <span className="mt-1.5 w-2 h-2 rounded-full bg-blue-500 flex-shrink-0" />
                   <div>
-                    <p className="theme-heading text-md font-semibold dark:text-white">SDE Intern</p>
+                    <p className="theme-heading text-md font-semibold dark:text-white">Full-Stack Intern</p>
                     <div className="flex items-center gap-2 mt-0.5">
                       <span className="text-blue-500 text-md font-medium">Social Cults</span>
                       
@@ -265,19 +314,31 @@ export default function About() {
               Skills &amp; Stack
             </span>
           </div>
-          <ul className="space-y-3">
-            {skills.map((skill) => (
-              <li key={skill} className="flex items-center justify-between group">
-                <span className="theme-copy text-sm transition-colors group-hover:text-gray-900 dark:group-hover:text-white">
-                  {skill}
-                </span>
-                <div className="flex items-center gap-1.5 ml-2 flex-1">
-                  <div className="h-px flex-1 bg-gray-100 transition-colors group-hover:bg-gray-200 dark:bg-white/10 dark:group-hover:bg-white/20" />
-                  <span className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-gray-300 transition-colors group-hover:bg-gray-500 dark:bg-neutral-600 dark:group-hover:bg-neutral-300" />
+          <div className="flex flex-col gap-6">
+            {skillsData.map((group) => (
+              <div key={group.category}>
+                <h3 className="mb-3 text-[11px] font-bold uppercase tracking-widest text-gray-400 dark:text-neutral-500">
+                  {group.category}
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {group.skills.map((skill) => (
+                    <motion.div
+                      key={skill.name}
+                      whileHover={{ scale: 1.05, y: -2 }}
+                      className="flex cursor-pointer items-center gap-2 rounded-lg border border-gray-200 bg-white px-3 py-1.5 shadow-sm transition-colors hover:border-blue-400 hover:shadow-md dark:border-white/10 dark:bg-[#111] dark:hover:border-blue-500/50"
+                    >
+                      <span className="text-gray-600 dark:text-gray-300">
+                        {skill.icon}
+                      </span>
+                      <span className="text-xs font-medium text-gray-700 dark:text-gray-200">
+                        {skill.name}
+                      </span>
+                    </motion.div>
+                  ))}
                 </div>
-              </li>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
 
       </div>

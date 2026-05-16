@@ -12,10 +12,6 @@ const HeroName = () => {
         />
        
       </div>
-       <p className="theme-copy mx-auto mt-6 max-w-2xl text-sm leading-7 md:text-base">
-        I build polished web products with modern frontend systems, reliable backend flows,
-        and interfaces that feel deliberate in motion and detail.
-      </p>
       
       
     </div>
