@@ -232,9 +232,9 @@ export default function About() {
                 <div className="flex items-start gap-3">
                   <span className="mt-1.5 w-2 h-2 rounded-full bg-blue-500 flex-shrink-0" />
                   <div>
-                    <p className="theme-heading text-md font-semibold dark:text-white">Full-Stack Intern</p>
+                    <p className="theme-heading text-md font-semibold dark:text-white">Sr. Backend Intern</p>
                     <div className="flex items-center gap-2 mt-0.5">
-                      <span className="text-blue-500 text-md font-medium">Social Cults</span>
+                      <span className="text-blue-500 text-md font-medium">Fidore Health</span>
                       
                     </div>
                     {/* <span className="theme-copy mt-2 inline-block rounded-md bg-gray-100 px-2 py-0.5 text-xs dark:bg-white/10">
