@@ -151,7 +151,7 @@ export default function Projects() {
   const activeProject = projects.find((p) => p.id === hovered);
 
   return (
-    <section className="w-full min-h-screen px-6 py-14 transition-colors duration-300 #ffffff dark:bg-[#0a0a0a]">
+    <section className="w-full px-6 pt-14 pb-14 transition-colors duration-300 #ffffff dark:bg-[#0a0a0a]">
       <div className="max-w-6xl mx-auto">
 
         {/* Header */}

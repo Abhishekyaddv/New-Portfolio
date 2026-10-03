@@ -4,20 +4,20 @@ export default function MyJourneyPage() {
   // 1. Create the array of data
   const timelineData = [
     {
-      title: "May 2026 - Present",
+      title: "Mar 2026 - Present",
       content: (
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 text-sm md:text-base leading-relaxed font-normal mb-3">
-            Working as Sr.Backend Intern at <span className="font-semibold text-blue-500">Fidore Health</span>.
+            Working as Associate Developer at <span className="font-semibold text-blue-500">Fidore Health</span>.
           </p>
-          <p className="text-neutral-800 dark:text-neutral-200 text-sm md:text-base leading-relaxed font-normal mb-4">
-            <span className="font-semibold text-green-500">Fidore Health </span> 
+          <div className="text-neutral-800 dark:text-neutral-200 text-sm md:text-base leading-relaxed font-normal mb-4">
+            <span className="font-semibold text-green-500">Fidore Health </span>
             <ul className="list-disc list-inside">
               <li>Developed Inhouse CRM and Dashboard for Company From Scratch Using Laravel and React.</li>
               <li>Optimized the application to improve loading performance and page load speeds.</li>
               <li>Reduced query time for database operations by 40% using filtering and indexing.</li>
             </ul>
-          </p>
+          </div>
           {/* You can even put images or other components in here! */}
         </div>
       ),

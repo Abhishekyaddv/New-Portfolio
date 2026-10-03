@@ -5,6 +5,7 @@ import HeroName from "@/components/HeroName";
 import MyJourneyPage from "@/components/MyJourneyPage";
 import { Nav } from "@/components/Nav";
 import Projects from "@/components/Projects";
+import UnderConstruction from "@/components/UnderConstruction";
 
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
       <HeroName />
       <About />
       <Projects />
+      <UnderConstruction />
       <MyJourneyPage />
       <Footer />
 
