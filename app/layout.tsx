@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import CustomCursor from "@/components/ui/CustomCursor";
+import CatCursor from "@/components/ui/CatCursor";
 
 
 const poppins = Poppins({
@@ -36,7 +36,7 @@ export default function RootLayout({
       <body
         className={`${poppins.className} antialiased bg-background text-foreground transition-colors duration-300`}
       >
-        <CustomCursor />
+        <CatCursor />
         {children}
       </body>
     </html>
