@@ -8,10 +8,11 @@ type Theme = "dark" | "light";
 
 function getThemeSnapshot(): Theme {
   if (typeof window === "undefined") {
-    return "dark";
+    return "light";
   }
 
-  return localStorage.getItem("theme") === "light" ? "light" : "dark";
+  // Matches the bootstrap script in layout.tsx: light unless dark was saved
+  return localStorage.getItem("theme") === "dark" ? "dark" : "light";
 }
 
 function subscribe(onStoreChange: () => void) {
@@ -29,6 +30,19 @@ function subscribe(onStoreChange: () => void) {
 }
 
 const projects = [
+  {
+    id: 7,
+    title: "Seoul Root",
+    description:
+      "Shopify storefront for a Korean-inspired skincare brand made for young Indian skin. Custom-designed theme with a five-product essentials range, a routine finder and 'Skin School' content pages.",
+    tags: ["SHOPIFY", "LIQUID", "E-COMMERCE", "D2C"],
+    color: "#2f6b4f",
+    liveUrl: "https://seoulroot.in/",
+    platform: "shopify",
+    preview: "/seoulroot.png",
+    previewLabel: "Seoul Root - Korean-inspired skincare store",
+    previewBg: "#f2f6f3",
+  },
    {
     id: 1,
     title: "Contexto",
@@ -124,6 +138,14 @@ const GithubIcon = () => (
   </svg>
 );
 
+// Shopping bag icon for the Shopify badge
+const ShopifyIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3">
+    <path d="M5 7h14l-1.2 13H6.2z" />
+    <path d="M9 10V6a3 3 0 016 0v4" />
+  </svg>
+);
+
 // Book icon for section header
 const BookIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="#60a5fa" strokeWidth="2" className="w-5 h-5">
@@ -135,7 +157,7 @@ const BookIcon = () => (
 export default function Projects() {
   const [hovered, setHovered] = useState<number | null>(null);
   const [popupPos, setPopupPos] = useState({ x: 0, y: 0 });
-  const theme = useSyncExternalStore(subscribe, getThemeSnapshot, () => "dark");
+  const theme = useSyncExternalStore(subscribe, getThemeSnapshot, () => "light");
   const isDark = theme === "dark";
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -266,6 +288,12 @@ function ProjectCard({
           {project.title}
         </h3>
 
+        {project.platform === "shopify" && (
+          <span className="mt-0.5 inline-flex shrink-0 items-center gap-1 rounded-full bg-[#95BF47]/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#5e8e3e] ring-1 ring-[#95BF47]/40 dark:text-[#95BF47]">
+            <ShopifyIcon /> Shopify
+          </span>
+        )}
+
         <div className="shrink-0 flex items-center gap-1 text-neutral-500 dark:text-neutral-500">
           <a
             href={project.liveUrl}
@@ -276,15 +304,17 @@ function ProjectCard({
           >
             <ArrowIcon />
           </a>
-          <a
-            href={project.githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-md p-1 transition-colors hover:text-slate-900 dark:hover:text-white"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <GithubIcon />
-          </a>
+          {project.githubUrl && (
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-md p-1 transition-colors hover:text-slate-900 dark:hover:text-white"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <GithubIcon />
+            </a>
+          )}
         </div>
       </div>
 
